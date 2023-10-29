@@ -1,0 +1,69 @@
+.body-penugasan {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.title-penugasan {
+    text-align: start;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#penugasan {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+#cards-penugasan {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-penugasan-1 {
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+}
+
+.card-penugasan-2 {
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    margin-left: 485px;
+}
+
+.green-penugasan-2 {
+    background-color: green;
+}
+
+.green-penugasan {
+    background-color: green;
+}
+
+.red-penugasan {
+    margin-left: 10px;
+    background-color: red;
+}
+
+#informasi-penugasan {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.container-penugasan {
+    width: 50%;
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}

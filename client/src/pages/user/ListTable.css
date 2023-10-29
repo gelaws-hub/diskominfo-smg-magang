@@ -1,0 +1,43 @@
+.tabel{
+  font-family: 'Poppins', sans-serif;
+  
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #797979;
+    color: white;
+  }
+  .table-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .table-content {
+    flex: 1;
+    margin-right: 20px; /* Margin antara tabel dan gambar */
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .check-image {
+    width: 100px; /* Sesuaikan lebar gambar sesuai kebutuhan */
+    height: auto; /* Atur tinggi gambar sesuai kebutuhan */
+  }
+  

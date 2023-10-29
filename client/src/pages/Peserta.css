@@ -1,0 +1,60 @@
+.custom-table {
+    width: 100% !important;
+    border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #f2f2f2;
+}
+
+.custom-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.custom-table tr:hover {
+    background-color: #ddd;
+}
+
+.custom-table button {
+    margin-right: 5px;
+}
+
+/* Add this CSS for pagination styles */
+.pagination-peserta {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-list-peserta {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.pagination-item {
+    margin: 0 5px;
+}
+
+.pagination-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pagination-link.is-current {
+    background-color: #fff;
+    color: #007bff;
+}

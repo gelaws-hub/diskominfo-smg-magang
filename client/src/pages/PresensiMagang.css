@@ -1,0 +1,89 @@
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.custom-table-presensi {
+    width: 100% !important;
+    border-collapse: collapse;
+}
+
+.custom-table-presensi th,
+.custom-table-presensi td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.custom-table-presensi th {
+    background-color: #f2f2f2;
+}
+
+.custom-table-presensi tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.custom-table-presensi tr:hover {
+    background-color: #ddd;
+}
+
+.custom-table-presensi Link {
+    margin-right: 5px;
+}
+
+
+.button.is-small {
+    margin-right: 5px;
+}
+
+.button.is-info {
+    background-color: #1E90FF;
+    /* Dodger Blue */
+}
+
+.button.is-danger {
+    background-color: #FF4500;
+    /* Orange Red */
+}
+
+.button.is-small {
+    color: white;
+}
+
+.button.is-small:hover {
+    opacity: 0.8;
+}
+
+.button-container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button.is-success {
+    background-color: #4CAF50;
+}
+
+.button.is-success:hover {
+    opacity: 0.8;
+}
+
+.button.is-danger {
+    background-color: #FF5733;
+    /* Red */
+}
+
+.button.is-danger:hover {
+    opacity: 0.8;
+}
