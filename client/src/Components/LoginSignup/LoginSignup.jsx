@@ -6,8 +6,10 @@ import user_icon from '../Assets/person.png';
 import password_icon from '../Assets/password.png';
 import imagelogin from '../../Assets/diskominfo.png';
 import background_login from "../Assets/login_page.jpg";
+import { TabTitle } from '../../TabName';
 
 const Login = () => {
+    TabTitle('Portal Diskominfo')
     const [username, setUser] = useState('');
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('');

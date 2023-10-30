@@ -8,8 +8,10 @@ import "../../Components/SideBar/Navbar.css"
 import jwt_decode from "jwt-decode"
 import axiosJWT from '../../config/axiosJWT';
 import axios from 'axios';
+import { TabTitle } from '../../TabName';
 
 const Presensi = () => {
+  TabTitle('Presensi');
   const videoRef = useRef(null);
   const [imageSrc, setImageSrc] = useState(null);
   const [captureTime, setCaptureTime] = useState(null);
@@ -68,11 +70,13 @@ const Presensi = () => {
         }
       });
       console.log('Server Response:', response.data);
+      window.alert("Berhasil Melakukan Presensi")
     } catch (error) {
       console.error('Error:', error);
+      window.alert("Gagal Melakukan Presensi")
     }
   };
-  
+
   return (
     <div className="body-main">
       <div className={`body-area${showNav ? " body-pd" : ""}`}>

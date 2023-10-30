@@ -64,7 +64,7 @@ async function doPresensi(req, res, url) {
     try {
       const response = await axios.get('http://worldtimeapi.org/api/timezone/Asia/Jakarta');
       // const time = moment.tz(response.data.datetime, 'Asia/Jakarta');
-      const time = moment(new Date("2023-10-26T07:59:59.0000"));
+      const time = moment(new Date("2023-10-30T07:59:59.0000"));
       const pid = req.params.id;
       // const baseUrl = process.env.APIDISKOMINFO;
       const baseUrl = "http://localhost:3000/";
@@ -172,7 +172,8 @@ function doTugas(req, res, url){
     const id = req.params.id; //ini perlu diganti biar otomatis
     const tid = req.params.tid;
 
-    const baseUrl = process.env.APIDISKOMINFO;
+    // const baseUrl = process.env.APIDISKOMINFO;
+    const baseUrl = "http://localhost:3000/";
     const fileName = url.replace('\\' , '/');
 
     const tugas = {

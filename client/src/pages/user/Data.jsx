@@ -11,6 +11,7 @@ import jwt_decode from "jwt-decode";
 // Import a modal library or create your custom modal component
 // For this example, I'm using a custom modal component.
 import ImageModal from './ImageModal'; // Create this component
+import { TabTitle } from '../../TabName';
 
 function formatDueDate(inputDate) {
   const date = new Date(inputDate);
@@ -21,6 +22,7 @@ function formatDueDate(inputDate) {
 }
 
 function Data(props) {
+  TabTitle('Data Presensi')
   const [data, setData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showImageModal, setShowImageModal] = useState(false);

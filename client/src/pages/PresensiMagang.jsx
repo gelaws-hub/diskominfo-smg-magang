@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './PresensiMagang.css';
-import { Link } from 'react-router-dom';
 import logo from "../Assets/diskominfo.png"
 import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
@@ -27,15 +26,15 @@ export const Peserta = () => {
     const requestUrl = searchDate
       ? `http://localhost:3000/admin/export-presensi?tanggal=${searchDate}`
       : 'http://localhost:3000/admin/export-presensi';
-  
+
     const response = await axiosJWT.get(requestUrl, {
       responseType: 'arraybuffer',
     });
-  
+
     const blob = new Blob([response.data], {
       type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     });
-  
+
     const downloadUrl = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = downloadUrl;
@@ -44,7 +43,7 @@ export const Peserta = () => {
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(downloadUrl);
-  };  
+  };
 
   const fetchCurrentTime = async () => {
     try {
@@ -92,6 +91,26 @@ export const Peserta = () => {
     } catch (error) {
       console.error('Error fetching data:', error);
     }
+  };
+
+  const formatDateTime = (dateTime) => {
+    if (dateTime === null) {
+      return '-'; // Display "-" for null values
+    }
+
+    const jakartaTimeZone = 'Asia/Jakarta';
+    const options = {
+      timeZone: jakartaTimeZone,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false, // Use 24-hour format
+    };
+
+    const date = new Date(dateTime);
+    const formattedTime = new Intl.DateTimeFormat('en-US', options).format(date);
+
+    return formattedTime;
   };
 
   return (
@@ -228,26 +247,35 @@ export const Peserta = () => {
                     <th>Check-Out</th>
                     <th>Image In</th>
                     <th>Image Out</th>
-                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {Array.isArray(users) &&
-                    users.map((user, index) => (
-                      <tr key={user.id}>
-                        <td>{index + 1}</td>
-                        <td>{user.nama}</td>
-                        <td>{user.check_in}</td>
-                        <td>{user.check_out}</td>
-                        <td>{user.image_url_in}</td>
-                        <td>{user.image_url_out}</td>
-                        <td>
-                          <Link to={`/edit/${user.id}`} className="button is-small is-info">
-                            Edit
-                          </Link>
-                        </td>
-                      </tr>
-                    ))}
+                  {Array.isArray(users) && users.map((user, index) => (
+                    <tr key={user.id}>
+                      <td>{index + 1}</td>
+                      <td>{user.nama}</td>
+                      {user.presensimagang.map((entry, entryIndex) => (
+                        <React.Fragment key={entry.id}>
+                          <td>{entry.check_in ? formatDateTime(entry.check_in) : '-'}</td>
+                          <td>{entry.check_out ? formatDateTime(entry.check_out) : '-'}</td>
+                          <td>
+                            {entry.image_url_in ? (
+                              <a href={entry.image_url_in} target="_self" rel="noopener noreferrer">
+                                Absen Masuk
+                              </a>
+                            ) : '-'}
+                          </td>
+                          <td>
+                            {entry.image_url_out ? (
+                              <a href={entry.image_url_out} target="_self" rel="noopener noreferrer">
+                                Absen Pulang
+                              </a>
+                            ) : '-'}
+                          </td>
+                        </React.Fragment>
+                      ))}
+                    </tr>
+                  ))}
                 </tbody>
               </table>
               <button onClick={exportPresensi} className="button is-success" style={{ marginTop: 18, float: 'right' }}>

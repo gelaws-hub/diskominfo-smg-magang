@@ -9,8 +9,10 @@ import './Tugas.css'; // Import file CSS terpisah untuk mengatur layout
 import jwt_decode from "jwt-decode"
 import axiosJWT from '../../config/axiosJWT';
 import axios from 'axios';
+import { TabTitle } from '../../TabName';
 
 function Tugas() {
+  TabTitle('Tugas')
   const [showNav, setShowNav] = useState(true);
   const [cardData, setData] = useState([]);
   // const [id, setID] = useState([]);

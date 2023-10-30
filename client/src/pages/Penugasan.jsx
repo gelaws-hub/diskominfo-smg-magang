@@ -304,9 +304,23 @@ function Penugasan() {
                     {statustugas.map((tugas, index) => (
                       <tr key={tugas.id}>
                         <td>{tugas.nama}</td>
-                        <td>{tugas.status_tugas[0].tugas_url || "N/A"}</td>
                         <td>
-                          {tugas.status_tugas[0].status_pengerjaan
+                          {tugas.status_tugas[0] && tugas.status_tugas[0].status_pengerjaan ? (
+                            <a href={tugas.status_tugas[0].tugas_url} target="_self" rel="noopener noreferrer">
+                              Sudah Mengerjakan
+                            </a>
+                          ) : (
+                            tugas.status_tugas[0] && tugas.status_tugas[0].tugas_url ? (
+                              <a href={tugas.status_tugas[0].tugas_url} target="_self" rel="noopener noreferrer">
+                                {tugas.status_tugas[0].tugas_url}
+                              </a>
+                            ) : (
+                              "Belum Mengerjakan"
+                            )
+                          )}
+                        </td>
+                        <td>
+                          {tugas.status_tugas[0] && tugas.status_tugas[0].status_pengerjaan
                             ? "Sudah Selesai"
                             : "Belum Selesai"}
                         </td>
