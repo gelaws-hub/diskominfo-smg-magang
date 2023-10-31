@@ -42,7 +42,7 @@ const App = () => {
         <Route path='presensi' element={<PresensiMagang />}/>
         <Route path='penugasan' element={<Penugasan />}/>
         <Route path='statistik' element={<Statistik />}/>
-        <Route path='/edit' element={<EditUser />}/>
+        <Route path='/edit/:id' element={<EditUser />}/>
       </Routes>
     </BrowserRouter>
   );

@@ -31,10 +31,11 @@ function Data(props) {
   useEffect(() => {
     const fetchDataAndPresensiData = async () => {
       try {
-        const ambilid = await axios.get('http://localhost:3000/account/token');
+        const ambilid = await axios.get('https://api.diskominfo-smg-magang.cloud/account/token');
         const decoded = jwt_decode(ambilid.data.token);
 
-        const response = await axiosJWT.get(`http://localhost:3000/user/presensi/${decoded.userId}`);
+          
+        const response = await axiosJWT.get(`https://api.diskominfo-smg-magang.cloud/user/presensi/${decoded.userId}`);
         const dataWithKosong = response.data.presensi.map((item) => ({
           ...item,
           check_in: item.check_in === null ? (

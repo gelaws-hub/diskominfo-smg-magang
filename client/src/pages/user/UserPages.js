@@ -43,7 +43,7 @@ const UserPages = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/account/token');
+      const response = await axios.get('https://api.diskominfo-smg-magang.cloud/account/token');
       const decoded = jwt_decode(response.data.token);
       setNama(decoded.nama);
       setuserName(decoded.username);
@@ -70,10 +70,10 @@ const UserPages = () => {
 
   const uploadPassword = async () => {
     try {
-      const ambilid = await axios.get('http://localhost:3000/account/token');
+      const ambilid = await axios.get('https://api.diskominfo-smg-magang.cloud/account/token');
       const decoded = jwt_decode(ambilid.data.token);
       
-      const response = await axiosJWT.patch(`http://localhost:3000/user/peserta/${decoded.userId}/edit`, formData);
+      const response = await axiosJWT.patch(`https://api.diskominfo-smg-magang.cloud/user/peserta/${decoded.userId}/edit`, formData);
       console.log('Server Response:', response.data);
       window.alert("Berhasil menggati password")
     } catch (error) {
@@ -176,15 +176,15 @@ const UserPages = () => {
               </div>
             </div>
             <div className="action-buttons">
-              <a href="/data">
+              <a href="user/presensi/riwayat">
                 <img src={data} alt="Peserta" />
                 <span>History Presensi</span>
               </a>
-              <a href="/presensi">
+              <a href="user/presensi">
                 <img src={presensi} alt="Penugasan" />
                 <span>Penugasan</span>
               </a>
-              <a href="/tugas">
+              <a href="user/tugas">
                 <img src={penugasan} alt="Statistik" />
                 <span>Tugas</span>
               </a>

@@ -23,7 +23,7 @@ export const EditUser = () => {
     const updateUser = async (e) => {
         e.preventDefault();
         try {
-            await axiosJWT.patch(`http://localhost:3000/admin/peserta/${id}/edit`, {
+            await axiosJWT.patch(`https://api.diskominfo-smg-magang.cloud/admin/peserta/${id}/edit`, {
                 nama,
                 asal_univ,
                 asal_jurusan,
@@ -40,7 +40,7 @@ export const EditUser = () => {
     };
 
     const getUserById = async () => {
-        const response = await axiosJWT.get(`http://localhost:3000/admin/peserta/${id}`);
+        const response = await axiosJWT.get(`https://api.diskominfo-smg-magang.cloud/admin/peserta/${id}`);
         setNama(response.data.peserta_magang.nama);
         setUniversitas(response.data.peserta_magang.asal_univ);
         setJurusan(response.data.peserta_magang.asal_jurusan);

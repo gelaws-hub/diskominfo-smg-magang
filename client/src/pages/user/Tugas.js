@@ -22,10 +22,10 @@ function Tugas() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const ambilid = await axios.get('http://localhost:3000/account/token');
+        const ambilid = await axios.get('https://api.diskominfo-smg-magang.cloud/account/token');
         const decoded = jwt_decode(ambilid.data.token);
 
-        const response = await axiosJWT.get(`http://localhost:3000/user/tugas-list/${decoded.userId}`);
+        const response = await axiosJWT.get(`https://api.diskominfo-smg-magang.cloud/user/tugas-list/${decoded.userId}`);
         setData(response.data.tugas);
       } catch (error) {
         console.error('Error fetching data:', error);

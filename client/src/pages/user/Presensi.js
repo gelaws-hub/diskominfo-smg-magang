@@ -57,14 +57,14 @@ const Presensi = () => {
 
   const uploadImage = async () => {
     try {
-      const ambilid = await axios.get('http://localhost:3000/account/token');
+      const ambilid = await axios.get('https://api.diskominfo-smg-magang.cloud/account/token');
       const decoded = jwt_decode(ambilid.data.token);
 
       // Create a FormData object to send the image as multipart/form-data
       const formData = new FormData();
       formData.append('image', imageSrc);
 
-      const response = await axiosJWT.patch(`http://localhost:3000/user/presensi/${decoded.userId}/up`, formData, {
+      const response = await axiosJWT.patch(`https://api.diskominfo-smg-magang.cloud/user/presensi/${decoded.userId}/up`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data' // Set content type to multipart/form-data
         }
