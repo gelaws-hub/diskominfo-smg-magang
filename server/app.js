@@ -8,10 +8,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-const accountRoute = require('./routes/account');
-const adminRoute = require('./routes/admin');
-const userRoute = require('./routes/user');
-const imageRoute = require('./routes/image');
+const accountRoute = require('./routes/Account');
+const adminRoute = require('./routes/Admin');
+const userRoute = require('./routes/User');
+const imageRoute = require('./routes/Image');
 const corsOptions = {
     credentials: true, // Mengizinkan pengiriman kredensial (kuki, header, dll.)
     origin: 'http://localhost:3001'

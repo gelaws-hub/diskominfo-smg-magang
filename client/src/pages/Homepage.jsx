@@ -27,7 +27,7 @@ const Homepage = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/account/token');
+      const response = await axios.get('https://api.diskominfo-smg-magang.cloud/account/token');
       const decoded = jwt_decode(response.data.token);
       setNama(decoded.nama);
     } catch (error) {

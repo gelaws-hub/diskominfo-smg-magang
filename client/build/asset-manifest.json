@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d7c59f10.css",
+    "main.js": "/static/js/main.ba79998f.js",
+    "static/media/login_page.jpg": "/static/media/login_page.74a005b8e201248c8d8d.jpg",
+    "static/media/image_Statistik.svg": "/static/media/image_Statistik.df5aef705765c7e64c27070312c16f2a.svg",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.449ad8adf6ae0424b7ed.woff",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.dea24bf5a7646d8b84e7.woff2",
+    "static/media/image_Data Presensi.svg": "/static/media/image_Data Presensi.e2557fbca89355eba6fa96734030bbe1.svg",
+    "static/media/balaikota.jpg": "/static/media/balaikota.03b88f514e39bab42bac.jpg",
+    "static/media/image_Lakukan Presensi.svg": "/static/media/image_Lakukan Presensi.8578a3f10a051a54e11036968b7b145b.svg",
+    "static/media/image_Penugasan.svg": "/static/media/image_Penugasan.81c0c6193607419bdfc497ee97c8603c.svg",
+    "static/media/image_Buat Penugasan.svg": "/static/media/image_Buat Penugasan.9cc711b6332099276971c4adbf9093b0.svg",
+    "static/media/image_Peserta magang.svg": "/static/media/image_Peserta magang.9a87be33e6c3b6e0e22296c0c8067c7b.svg",
+    "static/media/diskominfo.png": "/static/media/diskominfo.946dd116da78c5d819bd.png",
+    "index.html": "/index.html",
+    "main.d7c59f10.css.map": "/static/css/main.d7c59f10.css.map",
+    "main.ba79998f.js.map": "/static/js/main.ba79998f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7c59f10.css",
+    "static/js/main.ba79998f.js"
+  ]
+}

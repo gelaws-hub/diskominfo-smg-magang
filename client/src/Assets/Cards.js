@@ -48,13 +48,13 @@ const Cards = ({ data }) => {
 
   const uploadFile = async () => {
     try {
-      const ambilid = await axios.get('http://localhost:3000/account/token');
+      const ambilid = await axios.get('https://api.diskominfo-smg-magang.cloud/account/token');
       const decoded = jwt_decode(ambilid.data.token);
 
       const formData = new FormData();
       formData.append('image', file);
 
-      const response = await axiosJWT.patch(`http://localhost:3000/user/tugas/${decoded.userId}/submit/${selectedTaskID}`, formData);
+      const response = await axiosJWT.patch(`https://api.diskominfo-smg-magang.cloud/user/tugas/${decoded.userId}/submit/${selectedTaskID}`, formData);
       console.log('Server Response:', response.data);
       window.alert("Berhasil Submit Gambar")
       handleCloseModal()

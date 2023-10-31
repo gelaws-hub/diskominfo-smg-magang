@@ -1,5 +1,5 @@
 const express = require('express');
-const userController = require('../controllers/user.controller');
+const userController = require('../controllers/User_Controller');
 const checkAuthMiddleware = require('../middleware/check-auth');
 const imageUploader = require('../helpers/image-uploader');
 

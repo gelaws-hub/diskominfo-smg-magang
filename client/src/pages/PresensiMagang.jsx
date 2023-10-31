@@ -24,8 +24,8 @@ export const Peserta = () => {
 
   const exportPresensi = async () => {
     const requestUrl = searchDate
-      ? `http://localhost:3000/admin/export-presensi?tanggal=${searchDate}`
-      : 'http://localhost:3000/admin/export-presensi';
+      ? `https://api.diskominfo-smg-magang.cloud/admin/export-presensi?tanggal=${searchDate}`
+      : 'https://api.diskominfo-smg-magang.cloud/admin/export-presensi';
 
     const response = await axiosJWT.get(requestUrl, {
       responseType: 'arraybuffer',
@@ -47,7 +47,7 @@ export const Peserta = () => {
 
   const fetchCurrentTime = async () => {
     try {
-      const response = await fetch('http://worldtimeapi.org/api/timezone/Asia/Jakarta');
+      const response = await fetch('https://worldtimeapi.org/api/timezone/Asia/Jakarta');
       const data = await response.json();
       const dateTimeString = data.datetime;
       const dateTime = new Date(dateTimeString);
@@ -68,8 +68,8 @@ export const Peserta = () => {
 
   const getUsers = async () => {
     const url = searchDate
-      ? `http://localhost:3000/admin/presensi?tanggal=${searchDate}`
-      : 'http://localhost:3000/admin/presensi';
+      ? `https://api.diskominfo-smg-magang.cloud/admin/presensi?tanggal=${searchDate}`
+      : 'https://api.diskominfo-smg-magang.cloud/admin/presensi';
 
     try {
       const response = await axiosJWT.get(url);
@@ -86,7 +86,7 @@ export const Peserta = () => {
 
   const getPresensiBelum = async () => {
     try {
-      const response = await axiosJWT.get('http://localhost:3000/admin/presensi/negatif');
+      const response = await axiosJWT.get('https://api.diskominfo-smg-magang.cloud/admin/presensi/negatif');
       setUsers(response.data.presensi);
     } catch (error) {
       console.error('Error fetching data:', error);
